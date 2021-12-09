@@ -2,13 +2,13 @@
   <div class="about">
     <img alt="Vuex" src="../assets/you.jpeg">
     <h1>Do The Math!</h1>
-    <div class="counter">
-     <p> {{ $store.state.counter }} </p> 
-    </div>
-    <div class="buttons">
-      <button @click="$store.dispatch('increaseCounter')">vuex+</button>
-      <button @click="$store.dispatch('decreaseCounter')">vuex-</button>
-    </div>
+    
+    <counter />
+    <counter-square />
+    <buttons />
+    <color-code />
+
+
 
 
   </div>
@@ -16,27 +16,23 @@
 
 
 <script>
-// @ is an alias to /src
-
 
 export default {
-  name: 'About',  
+  name: 'About', 
+
+  components:{
+    'counter': require('@/components/Counter.vue').default,
+    'counter-square': require('@/components/CounterSquare.vue').default,
+    'buttons':require('@/components/Buttons.vue').default,
+    'color-code':require('@/components/ColorCode.vue').default
+    
+  }
 }
 </script>
 
 
 <style>
 div {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-.counter {
-  font-size: 80px;
-}
-.buttons button {
-  font-size: 30px;
-  width:100px;
-  margin: 0 10px;
-}
-
-
 </style>
